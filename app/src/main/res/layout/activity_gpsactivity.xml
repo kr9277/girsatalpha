@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".GPSActivity">
+
+    <TextView
+        android:id="@+id/titel4"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.2"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:text="Click To See Your Current Location:" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.05" />
+
+    <TextView
+        android:id="@+id/tvLat"
+        android:layout_width="280dp"
+        android:layout_height="0px"
+        android:layout_weight="0.2"
+        android:gravity="center"
+        android:text="Lat:" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.05" />
+
+    <TextView
+        android:id="@+id/tvLong"
+        android:layout_width="280dp"
+        android:layout_height="0px"
+        android:layout_weight="0.2"
+        android:gravity="center"
+        android:text="Long:" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.25" />
+
+    <Button
+        android:id="@+id/btnShowLocation"
+        android:layout_width="175dp"
+        android:layout_height="0px"
+        android:layout_weight="0.15"
+        android:text="Show Location" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.15" />
+</LinearLayout>

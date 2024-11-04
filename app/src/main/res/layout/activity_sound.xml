@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".SoundActivity">
+
+    <TextView
+        android:id="@+id/titel5"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.2"
+        android:gravity="center"
+        android:text="Click For Sound:"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.1" />
+
+    <Button
+        android:id="@+id/btnS1"
+        android:layout_width="240dp"
+        android:layout_height="0px"
+        android:layout_weight="0.15"
+        android:gravity="center"
+        android:text="Button" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.1" />
+
+    <Button
+        android:id="@+id/btnS2"
+        android:layout_width="240dp"
+        android:layout_height="0px"
+        android:layout_weight="0.15"
+        android:gravity="center"
+        android:text="Button" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.1" />
+
+    <Button
+        android:id="@+id/btnS3"
+        android:layout_width="240dp"
+        android:layout_height="0px"
+        android:layout_weight="0.15"
+        android:gravity="center"
+        android:text="Button" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.1" />
+</LinearLayout>

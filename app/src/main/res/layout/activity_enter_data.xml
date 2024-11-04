@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".EnterDataActivity">
+
+    <TextView
+        android:id="@+id/titel2"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.2"
+        android:gravity="center"
+        android:text="Enter Data And Click The Button:"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.1" />
+
+    <EditText
+        android:id="@+id/etText"
+        android:layout_width="280dp"
+        android:layout_height="0px"
+        android:layout_weight="0.2"
+        android:ems="10"
+        android:inputType="text"
+        android:text="enter something:" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.3" />
+
+    <Button
+        android:id="@+id/btnSaveText"
+        android:layout_width="151dp"
+        android:layout_height="0px"
+        android:layout_weight="0.15"
+        android:gravity="center"
+        android:text="Save Text" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.2" />
+</LinearLayout>
