@@ -31,7 +31,8 @@
         android:layout_weight="0.2"
         android:ems="10"
         android:gravity="center"
-        android:inputType="textPassword" />
+        android:inputType="text"
+        android:text="enter your password:" />
 
     <Space
         android:layout_width="match_parent"

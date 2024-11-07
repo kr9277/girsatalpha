@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/IMA"
+        android:title="Main Activity" />
+    <item
+        android:id="@+id/IEDA"
+        android:title="Enter Data Activity" />
+    <item
+        android:id="@+id/IGPSA"
+        android:title="GPS Activity" />
+    <item
+        android:id="@+id/ISDA"
+        android:title="Show Data Activity" />
+    <item
+        android:id="@+id/ISA"
+        android:title="Sound Activity" />
+    <item
+        android:id="@+id/ITPA"
+        android:title="Time Picker Activity" />
+</menu>
