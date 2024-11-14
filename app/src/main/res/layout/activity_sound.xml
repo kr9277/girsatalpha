@@ -26,11 +26,11 @@
 
     <Button
         android:id="@+id/btnS1"
-        android:layout_width="240dp"
+        android:layout_width="150dp"
         android:layout_height="0px"
         android:layout_weight="0.15"
         android:gravity="center"
-        android:text="Button" />
+        android:text="sound1" />
 
     <Space
         android:layout_width="match_parent"
@@ -39,11 +39,11 @@
 
     <Button
         android:id="@+id/btnS2"
-        android:layout_width="240dp"
+        android:layout_width="150dp"
         android:layout_height="0px"
         android:layout_weight="0.15"
         android:gravity="center"
-        android:text="Button" />
+        android:text="sound2" />
 
     <Space
         android:layout_width="match_parent"
@@ -52,14 +52,14 @@
 
     <Button
         android:id="@+id/btnS3"
-        android:layout_width="240dp"
+        android:layout_width="150dp"
         android:layout_height="0px"
         android:layout_weight="0.15"
         android:gravity="center"
-        android:text="Button" />
+        android:text="sound3" />
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="0px"
-        android:layout_weight="0.1" />
+        android:layout_weight="0.4" />
 </LinearLayout>

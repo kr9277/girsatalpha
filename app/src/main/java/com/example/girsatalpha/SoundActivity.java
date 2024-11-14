@@ -1,7 +1,9 @@
 package com.example.girsatalpha;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Button;
 
@@ -32,6 +34,18 @@ public class SoundActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+    public void playDog(View view){
+        final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.dog);
+        mediaPlayer.start();
+    }
+    public void playCat(View view){
+        final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.cat);
+        mediaPlayer.start();
+    }
+    public void playOmerAdam(View view){
+        final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.omeradam);
+        mediaPlayer.start();
     }
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.tafrit, menu);
