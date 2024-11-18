@@ -30,6 +30,7 @@
         android:layout_height="0px"
         android:layout_weight="0.15"
         android:gravity="center"
+        android:onClick="playDog"
         android:text="sound1" />
 
     <Space
@@ -43,6 +44,7 @@
         android:layout_height="0px"
         android:layout_weight="0.15"
         android:gravity="center"
+        android:onClick="playOmerAdam"
         android:text="sound2" />
 
     <Space
@@ -56,6 +58,7 @@
         android:layout_height="0px"
         android:layout_weight="0.15"
         android:gravity="center"
+        android:onClick="playCat"
         android:text="sound3" />
 
     <Space
