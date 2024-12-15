@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.Nullable;
@@ -55,6 +56,7 @@ public class TimePickerActivity extends AppCompatActivity {
             }
         }, hours, mins, false);
         timePickerDialog.show();
+        Toast.makeText(TimePickerActivity.this, "Time is Over!", Toast.LENGTH_SHORT).show();
     }
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.tafrit, menu);

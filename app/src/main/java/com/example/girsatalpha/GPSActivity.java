@@ -21,39 +21,40 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import androidx.core.app.ActivityCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class GPSActivity extends AppCompatActivity implements IBaseGps {
     private String hereLocation(Location location){
+        //update Location
         return "Lat:" + location.getLatitude() +"\n" + "Long:" + location.getLongitude();
     }
 
-
     @Override
     public void onLocationChanged(Location location) {
-
+        tvLocation.setText(hereLocation(location));
     }
 
     @Override
     public void onProviderDisabled(String provider) {
-
+        //empty
     }
 
     @Override
     public void onProviderEnabled(String provider) {
-
+        //empty
     }
 
     @Override
     public void onStatusChanged(String provider, int status, Bundle extras) {
-
+        //empty
     }
 
     @Override
     public void onGpsStatusChanged(int event) {
-
+        //empty
     }
 
     private static final int PERMISSION_LOCATION = 1000;
@@ -68,6 +69,7 @@ public class GPSActivity extends AppCompatActivity implements IBaseGps {
         btnShowLocation = findViewById(R.id.btnShowLocation);
         tvLocation = findViewById(R.id.tvLocation);
         titel4 = findViewById(R.id.titel4);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -77,41 +79,43 @@ public class GPSActivity extends AppCompatActivity implements IBaseGps {
             @Override
             public void onClick(View view) {
                 //check for location permission
-                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                     requestPermissions(new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_LOCATION);
-                }
-                else{
+                } else {
                     showLocation();
-                }
-            }
-            public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults){
-                if(requestCode == PERMISSION_LOCATION){
-                    if(grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                        showLocation();
-                    }
-                    else{
-                        Toast.makeText(GPSActivity.this, "Permission not granted!", Toast.LENGTH_SHORT).show();
-                        finish();
-                    }
-                }
-            }
-            @SuppressLint("MissingPermission")
-            private void showLocation(){
-                LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-                //check if gps enabled
-                if(locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
-                    //start locating
-                    tvLocation.setText("Loading location...");
-                    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, GPSActivity.this);
-                }
-                else{
-                    //enable gps
-                    Toast.makeText(GPSActivity.this, "Enable GPS!", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
                 }
             }
         });
     }
+
+    @SuppressLint("MissingPermission")
+    public void showLocation(){
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        //check if gps enabled
+        if(locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
+            //start locating
+            tvLocation.setText("Loading location...");
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, GPSActivity.this);
+        }
+        else{
+            //enable gps
+            Toast.makeText(GPSActivity.this, "Enable GPS!", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+        }
+    }
+        public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+            super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+            if(requestCode == PERMISSION_LOCATION){
+            if(grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                this.showLocation();
+            }
+            else{
+                Toast.makeText(GPSActivity.this, "Permission not granted!", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        }
+    }
+
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.tafrit, menu);
         return super.onCreateOptionsMenu(menu);

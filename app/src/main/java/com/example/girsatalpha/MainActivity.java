@@ -1,7 +1,11 @@
 package com.example.girsatalpha;
 
+import static com.example.girsatalpha.FBref.refUser;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -15,8 +19,10 @@ import android.view.MenuItem;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-    TextView titel1;
-    EditText etPassword, etEmail;
+    TextView titel1, tvId;
+    EditText etPassword, etEmail, etId;
+    Button btnSave1;
+    String Email, Password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         titel1 = findViewById(R.id.titel1);
+        tvId = findViewById(R.id.tvId);
+        btnSave1 = findViewById(R.id.btnSave1);
+        etId = findViewById(R.id.etId);
         etPassword = findViewById(R.id.etPassword);
         etEmail = findViewById(R.id.etEmail);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -59,5 +68,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
+    }
+    public void save1(View view) {
+
     }
 }

@@ -13,7 +13,7 @@
         android:id="@+id/titel5"
         android:layout_width="match_parent"
         android:layout_height="0px"
-        android:layout_weight="0.2"
+        android:layout_weight="0.5"
         android:gravity="center"
         android:text="Click For Sound:"
         android:textSize="34sp"
@@ -22,47 +22,108 @@
     <Space
         android:layout_width="match_parent"
         android:layout_height="0px"
-        android:layout_weight="0.1" />
+        android:layout_weight="0.2" />
 
-    <Button
-        android:id="@+id/btnS1"
-        android:layout_width="150dp"
-        android:layout_height="0px"
-        android:layout_weight="0.15"
-        android:gravity="center"
-        android:onClick="playDog"
-        android:text="sound1" />
-
-    <Space
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0px"
-        android:layout_weight="0.1" />
-
-    <Button
-        android:id="@+id/btnS2"
-        android:layout_width="150dp"
-        android:layout_height="0px"
-        android:layout_weight="0.15"
+        android:layout_weight="4"
         android:gravity="center"
-        android:onClick="playOmerAdam"
-        android:text="sound2" />
+        android:orientation="horizontal">
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:layout_weight="0.1" />
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnS3"
-        android:layout_width="150dp"
-        android:layout_height="0px"
-        android:layout_weight="0.15"
-        android:gravity="center"
-        android:onClick="playCat"
-        android:text="sound3" />
+            <Button
+                android:id="@+id/btnS1"
+                android:layout_width="150dp"
+                android:layout_height="0px"
+                android:layout_weight="0.15"
+                android:gravity="center"
+                android:onClick="playDog"
+                android:text="sound1" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:layout_weight="0.4" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="0.1" />
+
+            <Button
+                android:id="@+id/btnS2"
+                android:layout_width="150dp"
+                android:layout_height="0px"
+                android:layout_weight="0.15"
+                android:gravity="center"
+                android:onClick="playOmerAdam"
+                android:text="sound2" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="0.1" />
+
+            <Button
+                android:id="@+id/btnS3"
+                android:layout_width="150dp"
+                android:layout_height="0px"
+                android:layout_weight="0.15"
+                android:gravity="center"
+                android:onClick="playCat"
+                android:text="sound3" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="0.4" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnSS1"
+                android:layout_width="150dp"
+                android:layout_height="0px"
+                android:layout_weight="0.15"
+                android:text="stop sound 1" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="0.1" />
+
+            <Button
+                android:id="@+id/btnSS2"
+                android:layout_width="150dp"
+                android:layout_height="0px"
+                android:layout_weight="0.15"
+                android:text="stop sound 2" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="0.1" />
+
+            <Button
+                android:id="@+id/btnSS3"
+                android:layout_width="150dp"
+                android:layout_height="0px"
+                android:layout_weight="0.15"
+                android:text="stop sound 3" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="0.4" />
+        </LinearLayout>
+    </LinearLayout>
+
 </LinearLayout>

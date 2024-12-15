@@ -15,7 +15,7 @@
         android:layout_height="0px"
         android:layout_weight="0.2"
         android:gravity="center"
-        android:hint="Enter Data And Click The Button:"
+        android:hint="Enter Your Details:"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -30,8 +30,8 @@
         android:layout_height="0px"
         android:layout_weight="0.2"
         android:ems="10"
-        android:inputType="text"
-        android:hint="enter something:" />
+        android:hint="enter something:"
+        android:inputType="text" />
 
     <Space
         android:layout_width="match_parent"
@@ -44,6 +44,7 @@
         android:layout_height="0px"
         android:layout_weight="0.15"
         android:gravity="center"
+        android:onClick="save"
         android:text="Save Text" />
 
     <Space

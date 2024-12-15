@@ -32,7 +32,7 @@
         android:ems="10"
         android:gravity="center"
         android:inputType="text"
-        android:text="enter your password:" />
+        android:hint="enter your password:" />
 
     <Space
         android:layout_width="match_parent"
@@ -47,11 +47,50 @@
         android:ems="10"
         android:gravity="center"
         android:inputType="textEmailAddress"
-        android:text="enter your email:" />
+        android:hint="enter your email:" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.05" />
+
+    <TextView
+        android:id="@+id/tvId"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.15"
+        android:gravity="center"
+        android:text="enter your id:" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.05" />
+
+    <EditText
+        android:id="@+id/etId"
+        android:layout_width="280dp"
+        android:layout_height="0px"
+        android:layout_weight="0.2"
+        android:ems="10"
+        android:inputType="numberPassword" />
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="0px"
         android:layout_weight="0.5" />
+
+    <Button
+        android:id="@+id/btnSave1"
+        android:layout_width="145dp"
+        android:layout_height="0px"
+        android:layout_weight="0.2"
+        android:onClick="save1"
+        android:text="Save" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.1" />
 
 </LinearLayout>
