@@ -22,17 +22,17 @@
     <Space
         android:layout_width="match_parent"
         android:layout_height="0px"
-        android:layout_weight="0.1" />
+        android:layout_weight="0.2" />
 
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="280dp"
         android:layout_height="0px"
-        android:layout_weight="0.2"
+        android:layout_weight="0.3"
         android:ems="10"
         android:gravity="center"
-        android:inputType="text"
-        android:hint="enter your password:" />
+        android:hint="enter your password:"
+        android:inputType="text" />
 
     <Space
         android:layout_width="match_parent"
@@ -43,42 +43,27 @@
         android:id="@+id/etEmail"
         android:layout_width="280dp"
         android:layout_height="0px"
-        android:layout_weight="0.2"
+        android:layout_weight="0.3"
         android:ems="10"
         android:gravity="center"
-        android:inputType="textEmailAddress"
-        android:hint="enter your email:" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:layout_weight="0.05" />
-
-    <TextView
-        android:id="@+id/tvId"
-        android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:layout_weight="0.15"
-        android:gravity="center"
-        android:text="enter your id:" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:layout_weight="0.05" />
-
-    <EditText
-        android:id="@+id/etId"
-        android:layout_width="280dp"
-        android:layout_height="0px"
-        android:layout_weight="0.2"
-        android:ems="10"
-        android:inputType="numberPassword" />
+        android:hint="enter your email:"
+        android:inputType="textEmailAddress" />
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="0px"
         android:layout_weight="0.5" />
+
+    <TextView
+        android:id="@+id/tvMsg"
+        android:layout_width="280dp"
+        android:layout_height="0px"
+        android:layout_weight="0.4" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1" />
 
     <Button
         android:id="@+id/btnSave1"

@@ -16,11 +16,17 @@
         android:layout_weight="0.2"
         android:gravity="center"
         android:text="In how much time would you like to receive an alert?"
-        android:textSize="34sp"
+        android:textSize="24sp"
         android:textStyle="bold" />
 
     <Space
         android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.2" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="268dp"
         android:layout_height="0px"
         android:layout_weight="0.2" />
 

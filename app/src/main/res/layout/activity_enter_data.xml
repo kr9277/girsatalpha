@@ -44,7 +44,7 @@
         android:layout_height="0px"
         android:layout_weight="0.15"
         android:gravity="center"
-        android:onClick="save"
+        android:onClick="btnSaveTextsave"
         android:text="Save Text" />
 
     <Space
