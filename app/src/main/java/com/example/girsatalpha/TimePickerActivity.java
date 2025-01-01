@@ -3,9 +3,11 @@ package com.example.girsatalpha;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Button;
@@ -53,21 +55,23 @@ public class TimePickerActivity extends AppCompatActivity {
             return insets;
         });
 
-        cDT = new CountDownTimer(DURATION, 10) {
-            // countDownInterval for centi-seconds = 10
-            // countDownInterval for seconds = 1000
-            @Override
-            public void onTick(long mSecToFinish) {
-                updateDidplay(mSecToFinish);
-            }
 
-            @Override
-            public void onFinish() {
-                Toast.makeText(TimePickerActivity.this, "Passing to the first Activity", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(TimePickerActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        };
+
+//        cDT = new CountDownTimer(DURATION, 10) {
+//            // countDownInterval for centi-seconds = 10
+//            // countDownInterval for seconds = 1000
+//            @Override
+//            public void onTick(long mSecToFinish) {
+//                updateDidplay(mSecToFinish);
+//            }
+//
+//            @Override
+//            public void onFinish() {
+//                Toast.makeText(TimePickerActivity.this, "Passing to the first Activity", Toast.LENGTH_SHORT).show();
+//                Intent intent = new Intent(TimePickerActivity.this, MainActivity.class);
+//                startActivity(intent);
+//            }
+//        };
     }
 
 //    public void setTime(View view) {
@@ -88,25 +92,27 @@ public class TimePickerActivity extends AppCompatActivity {
 //        timePickerDialog.show();
 //        Toast.makeText(TimePickerActivity.this, "Time is Over!", Toast.LENGTH_SHORT).show();
 //    }
-    public void setTime(View view) {
-        cDT.start();
-        if(tvTime.getText().toString().equals("00:00")){
 
-        }
-    }
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if (cDT != null) {
-            cDT.cancel();
-        }
-    }
-    private void updateDidplay(long mSecToFinish) {
-        seconds = mSecToFinish / 1000;
-        centiSeconds = (mSecToFinish / 10) % 100;
-        formattedTime = String.format("%02d:%02d", seconds, centiSeconds);
-        tvTime.setText(formattedTime);
-    }
+//    public void setTime(View view) {
+//        cDT.start();
+//        if(tvTime.getText().toString().equals("00:00")){
+//
+//        }
+//    }
+//
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//        if (cDT != null) {
+//            cDT.cancel();
+//        }
+//    }
+//    private void updateDidplay(long mSecToFinish) {
+//        seconds = mSecToFinish / 1000;
+//        centiSeconds = (mSecToFinish / 10) % 100;
+//        formattedTime = String.format("%02d:%02d", seconds, centiSeconds);
+//        tvTime.setText(formattedTime);
+//    }
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.tafrit, menu);
         return super.onCreateOptionsMenu(menu);
@@ -134,5 +140,33 @@ public class TimePickerActivity extends AppCompatActivity {
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void setTime(View view) {
+        Calendar calendar = Calendar.getInstance();
+        int hours = calendar.get(Calendar.HOUR_OF_DAY);
+        int mins = calendar.get(Calendar.MINUTE);
+        TimePickerDialog timePickerDialog = new TimePickerDialog(TimePickerActivity.this, com.google.android.material.R.style.Theme_AppCompat_Dialog, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                Calendar c = Calendar.getInstance();
+                c.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                c.set(Calendar.MINUTE, minute);
+                c.setTimeZone(TimeZone.getDefault());
+                SimpleDateFormat format = new SimpleDateFormat("k:mm a");
+                String time = format.format(c.getTime());
+            }
+        }, hours, mins, false);
+        timePickerDialog.show();
+        ALARM_RQST_CODE++;
+        Intent intent = new Intent(this, AlarmReciever.class);
+        intent.putExtra("msg",String.valueOf(ALARM_RQST_CODE)+" 30 seconds");
+        alarmIntent = PendingIntent.getBroadcast(this, ALARM_RQST_CODE, intent, PendingIntent.FLAG_IMMUTABLE);
+        alarmMgr = (AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
+        alarmMgr.set(AlarmManager.ELAPSED_REALTIME_WAKEUP,
+                SystemClock.elapsedRealtime() + 30*1000, alarmIntent);
+        Calendar calNow = Calendar.getInstance();
+        calNow.add(Calendar.SECOND, 30);
+        tvTime.setText(String.valueOf(ALARM_RQST_CODE)+" Alarm in "+String.valueOf(calNow.getTime()));
     }
 }
