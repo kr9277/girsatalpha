@@ -24,7 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class EnterDataActivity extends AppCompatActivity {
     EditText etText;
-    String something;
+    String something = " ";
     int clickNum = 0;
     Button btnSaveText;
     TextView titel2;
@@ -78,7 +78,8 @@ public class EnterDataActivity extends AppCompatActivity {
     public void btnSaveTextsave(View view) {
         Log.i("click", "click");
         clickNum++;
+        something = etText.getText().toString();
         user2 = new User2(something, clickNum);
-        refUser.child(String.valueOf(clickNum)).setValue(something);
+        refUser.child(String.valueOf(clickNum)).setValue(user2);
     }
 }
