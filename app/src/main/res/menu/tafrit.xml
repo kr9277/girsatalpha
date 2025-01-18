@@ -12,7 +12,7 @@
         android:title="GPS Activity" />
     <item
         android:id="@+id/ISDA"
-        android:title="Show Data Activity" />
+        android:title="Show Data" />
     <item
         android:id="@+id/ISA"
         android:title="Sound Activity" />
